@@ -1,5 +1,6 @@
-// This is the Lidar Odometry And Mapping (LOAM) for solid-state lidar (for example: livox lidar),
-// which suffer form motion blur due the continously scan pattern and low range of fov.
+// This is the Lidar Odometry And Mapping (LOAM) for solid-state lidar (for
+// example: livox lidar), which suffer form motion blur due the continously scan
+// pattern and low range of fov.
 
 // Developer: Jiarong Lin  ziv.lin.ljr@gmail.com
 
@@ -36,15 +37,14 @@
 
 #include "laser_mapping.hpp"
 
-int main( int argc, char **argv )
-{
-    ros::init( argc, argv, "laserMapping" );
+int main(int argc, char **argv) {
+  ros::init(argc, argv, "laserMapping");
 
-    Laser_mapping laser_mapping;
+  Laser_mapping laser_mapping;
 
-    std::thread mapping_process{ &Laser_mapping::process, &laser_mapping };
+  std::thread mapping_process{&Laser_mapping::process, &laser_mapping};
 
-    ros::spin();
-    return 0;
+  ros::spin();
+  return 0;
 }
 // kate: indent-mode cstyle; indent-width 4; replace-tabs on;
